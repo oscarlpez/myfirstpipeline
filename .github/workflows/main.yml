@@ -11,16 +11,15 @@ jobs:
 
   steps:
   #Step 1: obtenemos codigo fuente
-  - name: Setup file system permissions
-  - run: sudo chmod -R 777 $GITHUB_WORKSPACE /github /__w/_temp
+  - name: Build
+    run: sudo chmod -R 777 $GITHUB_WORKSPACE /github /__w/_temp
   - uses: actions/checkout@v2
   # Step 2: creamos venv e instalamos dependencias
-  - name: Install dependencies
-  - run: python3 -m venv venv
-  - run: source venv/bin/activate
-  - run: pip install -r requirements.txt
-  # Step 3: ejecutamos linters y flake8 y lanzamos casos de prueba
-  - name: run tests
-  - run: source venv/bin/activate
-  - run: flake8 --exclude=venv* --statistics
-  - run: pytest -v
+  - name: Test
+    run: |
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install -r requirements.txt
+      flake8 --exclude=venv* --statistics
+      pytest -v
+      bandit -r saludar.py -s B311
