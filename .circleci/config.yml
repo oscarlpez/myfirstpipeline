@@ -41,8 +41,8 @@ jobs:
 # Lo dividimos en un workflow como secuencia en pasos 
   workflows:
     build_test_deploy:
-    jobs:
-    - build
-    - test
-    - deploy
+      jobs:
+        - build
+        - test
+        - deploy
 
