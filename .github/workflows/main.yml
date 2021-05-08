@@ -12,7 +12,6 @@ jobs:
     steps:
       #Step 1: obtenemos codigo fuente
       - name: Setup file system permissions
-        run: sudo chmod -R 777 $GITHUB_WORKSPACE /github /__w/_temp
       - uses: actions/checkout@v2
       # Step 2: creamos venv e instalamos dependencias
       - name: Install dependencies
