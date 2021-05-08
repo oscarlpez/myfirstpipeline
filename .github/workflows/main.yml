@@ -7,8 +7,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: circleci/python:3.7
-
     steps:
       #Step 1: obtenemos codigo fuente
       - name: Setup file system permissions
