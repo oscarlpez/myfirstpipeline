@@ -30,6 +30,7 @@ jobs:
           pytest -v
       # Step 4: Build and push docker
       - name: Build and Push Docker
+        uses: actions/checkout@v2
         run: |
             docker/build-push-action@v1
             with: 
