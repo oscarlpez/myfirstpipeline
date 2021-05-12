@@ -31,7 +31,6 @@ jobs:
       # Step 4: Build and push docker
       - name: Build and Push Docker
         run: |
-            source venv/bin/activate
             docker/build-push-action@v1
             with: 
              username: ${{ secrets.DOCKER_USERNAME }}
