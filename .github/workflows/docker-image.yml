@@ -21,6 +21,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag local/app-tested:1.0
+      run: docker build . --file Dockerfile --tag local/app-tested
     - name: Docker Push
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/app-tested:1.0
+#      run: docker push ${{ secrets.DOCKER_USERNAME }}/app-tested:1.0
