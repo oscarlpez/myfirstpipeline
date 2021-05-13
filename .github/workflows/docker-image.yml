@@ -23,4 +23,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag local/app-tested
     - name: Docker Push
-#      run: docker push ${{ secrets.DOCKER_USERNAME }}/app-tested:1.0
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/app-tested
+      tag_with_ref: true
+      tag with_sha: true
+      tags: ${{ github.sha }}
